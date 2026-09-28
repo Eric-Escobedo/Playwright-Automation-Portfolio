@@ -9,4 +9,4 @@ def test_features_link(setup_home_page: HomePage):
     setup_home_page.click_docs()
     
     # Assert that we sucessfully navigated to the intro search URL
-    expect(setup_home_page.page).to_have_url("https://playwright.dev/docs/intro")
+    expect(setup_home_page.page).to_have_url("https://playwright.dev/python/docs/intro")

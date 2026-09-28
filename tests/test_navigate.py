@@ -1,10 +1,12 @@
 import re
+import pytest
 from playwright.sync_api import Page, expect
 from pages import HomePage, DocsPage
 
 def test_navigate_to_docs(setup_home_page):
     setup_home_page.click_docs().verify_docs_loaded()
-    
+
+@pytest.mark.smoke    
 def test_naviagte_to_search(setup_home_page):
     (
         setup_home_page.click_search()
