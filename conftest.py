@@ -29,3 +29,9 @@ def setup_home_page(page: Page, config) -> HomePage:
     #page.goto("https://playwright.dev/")
     page.goto(base_url)
     return home
+
+@pytest.fixture(scope="session")
+def api_request_context(playwright):
+    context = playwright.request.new_context(base_url="https://jsonplaceholder.typicode.com")
+    yield context
+    context.dispose()
